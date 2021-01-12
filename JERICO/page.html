@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Minifacebook</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="JERICO.css" rel="stylesheet"/>
+  <link href="Recherche.css" rel="stylesheet"/>
+  <link href="Projet.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1>WELCOME TO MINIFACEBOOK</h1>
+  <p>BIENVENUE DANS NOTRE MINIFACEBOOK</p> 
+   <!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="navbar">
+  <a class="active" href="page.html"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fa fa-fw fa-user"></i>Login</a>
+  <a href="Principal.php"><i class="fa fa-fw fa-user"></i> Se Deconnecter </a>
+</div>
+
+<div id="mySidenav" class="sidenav">
+
+     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     <a class="active" href="#"><i class="fa fa-home">Profil</i></a><br/>
+     <a href="Contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a><br/>
+     <a href="#"><i class="fa fa-globe"></i>Publication</a><br/>
+     <a href="principal.php"><i class="fa fa-trash"></i> sortie </a><br/>
+     <a href="#"><i class="fa fa-globe"></i>Aide</a><br/>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Recherche </span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<div id="id01" class="modal">
+     <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="close Modal">&times;</span>
+            <img src="images.jpg" alt="Avatar" class="avatar">
+          </div>
+          <div class="container">
+              <label for="uname">
+      <b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+          
+          <label for="psw">
+        <b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+          
+          
+          <button type="submit">Login</button>
+          <label>
+              <input type="checkbox" checked="checked" name="remember">
+        Remember me <br/>
+      
+        </div>
+        
+        <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot<a href="#">password?</a></span>
+        </div>
+        </form>
+        </div>
+        
+        <script>
+        var modal= document.getElementById('id01');
+        
+        window.onclick= function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+      }
+      </script>
+  </div>
+
+</div>
+               <form>
+                    <div width="10%" >
+                    <textarea name="commentaire" id="comme" cols="0" rows="10" placeholder="votre commentaire....."></textarea> <br> <br>
+                    </div>
+                    <div class="inputt">
+                        <input type="submit" value="Publie mon commentaire" name="submit_commentaire"/>
+                    </div>
+                  
+                </form><br/><br/><br/>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>DEVELOPPEMENT</h2>
+        <p><h4>Utilisateur</h4></p>
+        <p><h4>Information</h4></p>
+        <p><h4>Fonction</h4></p>
+        <p><h4>A propos</h4></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>ADRESSE</h2>
+      <p><h4>+(237)693-06-57-20</h4></p>
+      <p><h4>Ongono Armel Serge</h4></p>
+      <p><h4>Yaoundé</h4></p>
+      <p><h4>Copyright & copie; 2021 Ongono Armel Serge</h4></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>CONTACT</h2>        
+        <p><a href="https://web.YouTube" color="black"><h4>YouTube</h4></a></p>
+        <p><a href="https://web.whatsapp" color="black"><h4>whatsapp</h4></a></p>
+        <p><a href="https://web.facebook" color="black"><h4>facebook</h4></a></p>
+        <p><a href="https://web.instagram" color="black"><h4>instagram</h4></a></p>
+        <p><a href="https://web.telegram" color="black"><h4>telegram</h4></a></p>
+        <p><a href="https://web.twitter" color="black"><h4>twitter</h4></a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

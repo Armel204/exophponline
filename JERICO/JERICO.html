@@ -1,0 +1,152 @@
+<h1><center> INSCRIPTION </center></h1>
+  <div class="imgcontainer">
+    <img src="images.jpg" alt="Avatar" class="avatar">
+  </div>
+<div class="yes"></div>
+<div class="yess">
+<div class="container">
+  <form action="action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Nom:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Entrez Votre Nom..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Prénom:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder=" Entrez votre Prenom..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Email:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Entrez Votre E.mail..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Mot de passe:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Entrez Votre Mot de passe..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Civilité:</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="Votre attribut">
+          <option value="Monsieur">Monsieur</option>
+          <option value="Madame">Madame</option>
+        </select>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-25">
+        <label for="country">Pays:</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="Votre Nation">
+          <option value="Algérie">Algérie</option>
+          <option value="Afrique du Sud">Afrique du Sud</option>
+          <option value="Angola">Angola</option>
+          <option value="Bénin">Bénin</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Burkina Faso">Burkina Faso</option>
+          <option value="Cameroun">Cameroun</option>
+          <option value="Côte d'ivoire">Côte d'ivoire</option>
+          <option value="Comores">Comores</option>
+          <option value="Djibouti">Djibouti</option>
+          <option value="Egypte">Egypte</option>
+          <option value="Ethiopie">Ethiopie</option>
+          <option value="Gabon">Gabon</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Libéria">Libéria</option>
+          <option value="Madagascar">Madagascar</option>
+          <option value="Mali">Mali</option>
+          <option value="Maroc">Maroc</option>
+          <option value="Nigéria">Nigéria</option>
+          <option value="Niger">Niger</option>
+          <option value="Ouganda">Ouganda</option>
+          <option value="Rwanda">Rwanda</option>
+          <option value="Sénégal">Sénégal</option>
+          <option value="Tanzanie">Tanzanie</option>
+          <option value="Togo">Togo</option>
+          <option value="Zambie">Zambie</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Se connecter">
+      <label>
+       <input type="checkbox" checked="checked" name="remember"> Rappeler moi s'il vous plait
+      </label>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button></br>
+        <span class="psw">Avez vous oublier votre<a href="#">Mot de Passe</a></span>
+    </div>
+   </div>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <div class="g-recaptcha" data-sitekey="6Lc9sBYaAAAAAC8OzNNlanUvF2ipzKMtABnQut1V"></div>
+   <?php
+include("connect.php");
+$idcom=connexpdo('facebook','site');
+if(!empty($_POST['prenom'])&& !empty($_POST['email'])&& !empty($_POST['password']))
+{
+$id_user="\N";
+$nom=$idcom->quote($_POST['nom']);
+$prenom=$idcom->quote($_POST['prenom']); 
+$mail=$idcom->quote($_POST['email']);
+$password=$idcom->quote($_POST['password']);  
+$civilité=$idcom->quote($_POST['civilité']);  
+$pays=$idcom->quote($_POST['pays']);  
+$date=$idcom->quote($_POST['date']);  
+ 
+
+
+// Requête SQL
+$requete="INSERT INTO enregistrement
+VALUES($id_user,$nom,$prenom,$email,$password,$civilité,$pays,$date)"; // pas de guillemets si on applique la méthode quote aux variables
+
+$nblignes=$idcom->exec($requete); 
+if($nblignes!=1) 
+{
+$mess_erreur=$idcom->errorInfo();
+echo "Insertion impossible, code", $idcom->errorCode(),$mess_erreur[2];
+echo "<script type=\"text/javascript\">
+alert('Erreur : ".$idcom->errorCode()."')</script>";
+}
+else
+{
+echo "<script type=\"text/javascript\">
+alert('Vous êtes enregistré. Votre numéro de client est :
+". $idcom->lastInsertId()."')</script>"; 
+$idcom=null;
+}
+}
+else {echo "<h3>Formulaire à compléter !</h3>";}
+?>
+
+  </form>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>

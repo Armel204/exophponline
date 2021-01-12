@@ -1,0 +1,54 @@
+h1{
+	color: black;
+	text-align: center;
+	background-attachment:scroll;
+	font-family:"Algerian"
+}
+h2{
+	font-family:"Arial";
+}
+
+p{
+	text-align: left;
+}
+p:first-letter{
+	font-size: 550%;
+	font-family: "Algerian";
+}
+#pseudo:first-letter{
+	font-size:90px;
+}
+header{
+	font-family:Arial;
+}
+header nav{
+	color: white;
+}
+header nav ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+header nav ul li{
+	margin:0;
+	padding:0;
+	float: left;
+	width:200px;
+	height:40px;
+	background-color:#FF6633;
+	line-height:40px;
+	text-align: center;
+}
+header nav ul li a{
+	display:block;
+}
+header nav ul li a:hover{
+	background-color: #CC9900;
+	opacity:0.5;
+}
+header nav ul li ul li{
+	display:none;
+}
+header nav ul li:hover ul li{
+	display:block;
+}

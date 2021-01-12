@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Minifacebook</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="JERICO.css" rel="stylesheet"/>
+  <link href="Recherche.css" rel="stylesheet"/>
+  <link href="Projet.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1> CONTACT </h1>
+   <!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="navbar">
+  <a class="active" href="page.html"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fa fa-fw fa-user"></i>Login</a>
+  <a href="#"><i class="fa fa-fw fa-user"></i> <a href="Principal.php"> Se Deconnecter </a> </a>
+</div>
+
+<div id="mySidenav" class="sidenav">
+
+     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     <a class="active" href="#"><i class="fa fa-home">Profil</i></a><br/>
+     <a href="#"><i class="fa fa-fw fa-user"></i> Commenter </a><br/>
+     <a href="#"><i class="fa fa-globe"></i>Publication</a><br/>
+     <a href="principal.php"><i class="fa fa-trash"></i> sortie </a>br/>
+     <a href="#"><i class="fa fa-globe"></i>Aide</a><br/>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Recherche </span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>DEVELOPPEMENT</h2>
+        <p><h4>Utilisateur</h4></p>
+        <p><h4>Information</h4></p>
+        <p><h4>Fonction</h4></p>
+        <p><h4>A propos</h4></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>ADRESSE</h2>
+      <p><h4>+(237)693-06-57-20</h4></p>
+      <p><h4>Nanga-Eboko</h4></p>
+      <p><h4>Copyright & copie; 2021 Ongono Armel Serge</h4></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>CONTACT</h2>        
+        <p><a href="https://web.YouTube" color="black"><h4>YouTube</h4></a></p>
+        <p><a href="https://web.whatsapp" color="black"><h4>whatsapp</h4></a></p>
+        <p><a href="https://web.facebook" color="black"><h4>facebook</h4></a></p>
+        <p><a href="https://web.instagram" color="black"><h4>instagram</h4></a></p>
+        <p><a href="https://web.telegram" color="black"><h4>telegram</h4></a></p>
+        <p><a href="https://web.twitter" color="black"><h4>twitter</h4></a></p>
+    </div>
+  </div>
+</div>
